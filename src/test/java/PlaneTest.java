@@ -12,9 +12,9 @@ public class PlaneTest {
 
      @Before
      public void setUp(){
-         plane1 = new Plane(PlaneType.BOEING747);
-         plane2 = new Plane(PlaneType.AIRBUS_A350);
-         plane3 = new Plane(PlaneType.BOMBARDIER);
+         plane1 = new Plane("PL001", PlaneType.BOEING747);
+         plane2 = new Plane("PL002", PlaneType.AIRBUS_A350);
+         plane3 = new Plane("PL003", PlaneType.BOMBARDIER);
      }
 
      @Test
@@ -36,6 +36,13 @@ public class PlaneTest {
          assertEquals(400, plane1.getTotalWeight());
          assertEquals(200, plane2.getTotalWeight());
          assertEquals(100, plane3.getTotalWeight());
+     }
+
+     @Test
+    public void planeHasPlaneID(){
+         assertEquals("PL001", plane1.getPlaneId());
+         assertEquals("PL002", plane2.getPlaneId());
+         assertEquals("PL003", plane3.getPlaneId());
      }
 
 }
