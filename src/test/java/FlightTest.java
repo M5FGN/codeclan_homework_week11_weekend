@@ -106,4 +106,16 @@ public class FlightTest {
         assertEquals(5, flight.countPassengers());
     }
 
+    @Test
+    public void pilotCanFlyPlane(){
+        flight.addPilot(pilot1);
+        assertEquals("Sheldon Cooper says Thank-you for flying JavaAir", flight.flying());
+    }
+
+    @Test
+    public void crewCanDoSafetyPresentation(){
+        flight.addCrew(cabinCrewMember1);
+        assertEquals("Penny says Fasten your Seatbelts", flight.crewSafety());
+    }
+
 }

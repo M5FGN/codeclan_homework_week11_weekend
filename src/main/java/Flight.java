@@ -59,6 +59,7 @@ public class Flight {
         this.pilots.add(pilot);
     }
 
+
     public int countPilots() {
         return this.pilots.size();
     }
@@ -80,13 +81,19 @@ public class Flight {
         this.passengers.add(passenger);
     }
 
-    // Fix me
     public void addPassengerIfCapacity(Flight flight, Plane plane, Passenger passenger) {
-//        return flight.getPlane(plane).getCapacity();
-//           return passengers.size();
         if (passengers.size() < flight.getPlane(plane).getCapacity()) {
-//            this.passengers.add(passenger);
             flight.addPassenger(passenger);
         }
+    }
+
+    public String flying() {
+     String pilotToSpeak = pilots.get(0).getName();
+     return pilotToSpeak + " says Thank-you for flying JavaAir";
+    }
+
+    public String crewSafety() {
+        String crewToSpeak = cabinCrew.get(0).getName();
+        return crewToSpeak + " says Fasten your Seatbelts";
     }
 }
